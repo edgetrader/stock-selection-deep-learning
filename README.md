@@ -17,10 +17,10 @@ The analysis is entirely done on [JoinQuant](www.joinquant.com) research platfor
 **Benchmark**: CSI300   
 **Stock Universe**: All securities in CSI300  
 **Trading Frequency**: Every last business day of the month  
-**Strategy**: Stock Picking.  The top *10* securities in *category A (at least 10% return)* based on predicted probability will be selected for the month to go long. Only securities with predicted probability of at least *0.5* in that category is selected.  The top *10* securities in *category C (at least -10% return)* based on predicted probability will be selected for the month to go short. Only securities with predicted probability of at least *0.5* in that category is selected. 
-**Machine Learning model**: Tensorflow Keras Sequential Deep Learning Model.  Trained with 45 factors as features and performed multi-classification on next month returns.  Multi-classification as the returns are categorised to 3 levels based on their performance.  For example, 'A' being securities having at least 10% returns and 'C' being securities having at least -10% returns.
-**Sample Features**: beta, sharpe_rate_60, Variance20, liquidity, momentum as made available on [JQData Factor List](https://www.joinquant.com/help/api/help?name=factor_values)
-**Training Data**： Past 36 months of monthly factor data
+**Strategy**: Stock Picking.  The top *10* securities in *category A (at least 10% return)* based on predicted probability will be selected for the month to go long. Only securities with predicted probability of at least *0.5* in that category is selected.  The top *10* securities in *category C (at least -10% return)* based on predicted probability will be selected for the month to go short. Only securities with predicted probability of at least *0.5* in that category is selected.  
+**Machine Learning model**: Tensorflow Keras Sequential Deep Learning Model.  Trained with 45 factors as features and performed multi-classification on next month returns.  Multi-classification as the returns are categorised to 3 levels based on their performance.  For example, 'A' being securities having at least 10% returns and 'C' being securities having at least -10% returns.  
+**Sample Features**: beta, sharpe_rate_60, Variance20, liquidity, momentum as made available on [JQData Factor List](https://www.joinquant.com/help/api/help?name=factor_values). 
+**Training Data**： Past 36 months of monthly factor data. 
 **Other considerations**:   
 - Securities with incomplete or missing factor data are excluded from the selection process.  
 - All positions will be closed at monthend before new ones are executed.  This process can be improved to minimise selling and buying of the same security on the same day.  
